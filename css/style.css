@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'bloodynormal';
+    src: url('../fonts/BLOODY-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    box-sizing: border-box;
+    font-family: bloodynormal, serif;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    background-image: url(../images/board-bg.jpg);
+    background-size: cover;
+}
+
+section#score {
+  width: 100%;
+}
+
+#board {
+  width: 640px;
+  height: 640px;
+  margin: 1em auto;
+}
+
+#board  > div {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(211,211,211, 0.55);
+  float: left;
+  width: 64px;
+  height: 64px;
+}
+
+
+section#score div {
+  width: 10em;
+  height: 3em;
+  text-align: center;
+  padding: 0.5em;
+  background-color: rgba(211,211,211, 0.75);
+  border: 1px solid lightgray;
+  border-radius: 1px;
+  box-shadow: 1px 1px 5px 1px lightgray;
+  margin: 1em auto;
+}
+
+.zombie {
+  background: url('../images/zombie_head.png') no-repeat;
+  background-size: cover;
+}
+
+.brain {
+  background-size: cover;
+  background: url('../images/brain.png') no-repeat center;
+
+  animation-name: pulse_animation;
+  animation-duration: 1000ms;
+  transform-origin:70% 70%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+section#over {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  padding: 10px;
+  background-color: rgba(46, 10, 68, 0.9);
+  font-size: 4em;
+  color: rgb(0, 189, 0);
+}
+
+section#over pre {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bolder;
+  color: brown;
+}
+
+.invisible {
+  opacity: 0;
+  -webkit-transition: all 0.9s ease-in-out;
+  -moz-transition: all 0.9s ease-in-out;
+  -ms-transition: all 0.9s ease-in-out;
+  -o-transition: all 0.9s ease-in-out;
+  transition: all 0.9s ease-in-out;
+}
+
+.none {
+  display: none;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-80%);
+  }
+
+.over, .start {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  padding: 10px;
+  background-color: rgba(46, 10, 68, 0.9);
+  }
+
+.over p, .start p {
+  text-align: center;
+}
+
+#over button, .start button {
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+  height: 60px;
+  cursor: pointer;
+  background-color: rgb(255, 81, 196);
+  color: rgb(299, 299, 299);
+  font-size: 25px;
+}
+
+.start .container {
+  color: rgb(0, 189, 0);
+}
+
+.start .container h1 {
+  font-size: 68px;
+}
+
+.start .container p {
+  font-size: 40px;
+}
+
+#over {
+  background-color: #000;
+}
+
+@keyframes pulse_animation {
+  0% { background-size: 95%; }
+  50% { background-size: 85% }
+  100% { background-size: 95% }
+}
