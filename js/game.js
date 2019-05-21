@@ -5,12 +5,12 @@ var Trap = require('./trap.js');
 function Game() {
   this.board = document.querySelectorAll('#board div');
   this.zombie = new Zombie();
-  this.brain = new Brain();
   this.trap = new Trap();
   this.trap2 = new Trap();
   this.trap3 = new Trap();
   this.trap4 = new Trap();
   this.trap5 = new Trap();
+  this.brain = new Brain();
   this.score = 0;
   this.index = function(x, y) {
     return x + (y * 10);
@@ -25,7 +25,9 @@ function Game() {
   }
 
   this.showBrain = function() {
+
     this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+
   }
 
   this.showTrap = function() {
@@ -79,17 +81,23 @@ function Game() {
   this.checkBrainCollision = function() {
     if (this.zombie.x === this.brain.x && this.zombie.y === this.brain.y) {
       document.querySelector('.brain').classList.remove('brain');
+      document.querySelectorAll('.trap').forEach(e => e.classList.remove('trap'));
       document.querySelector('.eat').play();
       this.score++
       document.querySelector('#score strong').innerText = this.score;
       this.brain = new Brain();
       this.showBrain();
+      this.trap = new Trap();
+      this.trap2 = new Trap();
+      this.trap3 = new Trap();
+      this.trap4 = new Trap();
+      this.trap5 = new Trap();
+      this.showTrap();
     }
   }
 
 
   this.gameOver = function() {
-    console.log(document.querySelectorAll('.trap'));
     if ((this.zombie.x < 0 || this.zombie.x > 9 || this.zombie.y < 0 || this.zombie.y > 9) ||
         (this.zombie.x === this.trap.x && this.zombie.y === this.trap.y) ||
         (this.zombie.x === this.trap2.x && this.zombie.y === this.trap2.y) ||
