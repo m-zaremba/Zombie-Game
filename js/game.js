@@ -7,6 +7,10 @@ function Game() {
   this.zombie = new Zombie();
   this.brain = new Brain();
   this.trap = new Trap();
+  this.trap2 = new Trap();
+  this.trap3 = new Trap();
+  this.trap4 = new Trap();
+  this.trap5 = new Trap();
   this.score = 0;
   this.index = function(x, y) {
     return x + (y * 10);
@@ -26,6 +30,10 @@ function Game() {
 
   this.showTrap = function() {
     this.board[this.index(this.trap.x, this.trap.y)].classList.add('trap');
+    this.board[this.index(this.trap2.x, this.trap2.y)].classList.add('trap');
+    this.board[this.index(this.trap3.x, this.trap3.y)].classList.add('trap');
+    this.board[this.index(this.trap4.x, this.trap4.y)].classList.add('trap');
+    this.board[this.index(this.trap5.x, this.trap5.y)].classList.add('trap');
   }
 
 
@@ -81,11 +89,17 @@ function Game() {
 
 
   this.gameOver = function() {
-    if ((this.zombie.x < 0 || this.zombie.x > 9 || this.zombie.y < 0 || this.zombie.y > 9) || (this.zombie.x === this.trap.x && this.zombie.y === this.trap.y)) {
+    console.log(document.querySelectorAll('.trap'));
+    if ((this.zombie.x < 0 || this.zombie.x > 9 || this.zombie.y < 0 || this.zombie.y > 9) ||
+        (this.zombie.x === this.trap.x && this.zombie.y === this.trap.y) ||
+        (this.zombie.x === this.trap2.x && this.zombie.y === this.trap2.y) ||
+        (this.zombie.x === this.trap3.x && this.zombie.y === this.trap3.y) ||
+        (this.zombie.x === this.trap4.x && this.zombie.y === this.trap4.y) ||
+        (this.zombie.x === this.trap5.x && this.zombie.y === this.trap5.y)) {
       document.querySelector('.dead').play();
       clearInterval(this.idSetInterval);
       document.querySelector('.brain').classList.remove('brain');
-      document.querySelector('.trap').classList.remove('trap');
+      document.querySelectorAll('.trap').forEach(e => e.classList.remove('trap'));
       document.querySelector('#over').classList.remove('invisible');
       document.querySelector('#over').classList.remove('none');
       document.querySelector('p span').innerText = this.score;
