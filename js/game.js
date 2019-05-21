@@ -1,10 +1,12 @@
 var Zombie = require('./zombie.js');
 var Brain = require('./brain.js');
+var Trap = require('./trap.js');
 
 function Game() {
   this.board = document.querySelectorAll('#board div');
   this.zombie = new Zombie();
   this.brain = new Brain();
+  this.trap = new Trap();
   this.score = 0;
   this.index = function(x, y) {
     return x + (y * 10);
@@ -20,6 +22,10 @@ function Game() {
 
   this.showBrain = function() {
     this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+  }
+
+  this.showTrap = function() {
+    this.board[this.index(this.trap.x, this.trap.y)].classList.add('trap');
   }
 
 
@@ -73,11 +79,13 @@ function Game() {
     }
   }
 
+
   this.gameOver = function() {
-    if (this.zombie.x < 0 || this.zombie.x > 9 || this.zombie.y < 0 || this.zombie.y > 9) {
+    if ((this.zombie.x < 0 || this.zombie.x > 9 || this.zombie.y < 0 || this.zombie.y > 9) || (this.zombie.x === this.trap.x && this.zombie.y === this.trap.y)) {
       document.querySelector('.dead').play();
       clearInterval(this.idSetInterval);
       document.querySelector('.brain').classList.remove('brain');
+      document.querySelector('.trap').classList.remove('trap');
       document.querySelector('#over').classList.remove('invisible');
       document.querySelector('#over').classList.remove('none');
       document.querySelector('p span').innerText = this.score;
@@ -94,7 +102,7 @@ function Game() {
   this.startGame = function() {
     this.idSetInterval = setInterval(function() {
       self.moveZombie()
-    }, 250);
+    }, 200);
   }
 }
 

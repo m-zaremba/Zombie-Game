@@ -58,7 +58,16 @@ section#score div {
 .brain {
   background-size: cover;
   background: url('../images/brain.png') no-repeat center;
+  animation-name: pulse_animation;
+  animation-duration: 1000ms;
+  transform-origin:70% 70%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 
+.trap {
+  background-size: contain;
+  background: url('../images/trap.png') no-repeat center;
   animation-name: pulse_animation;
   animation-duration: 1000ms;
   transform-origin:70% 70%;
