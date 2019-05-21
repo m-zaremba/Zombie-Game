@@ -1,7 +1,11 @@
 # Zombie-Game
 
-This is a simple browser game written in javascript as one of homework assignments during my IT course.
-Preview [here](https://m-zaremba.github.io/Zombie-Game/)
+Simple javascript browser game based on one of the homework assignments from my IT course. You can preview it [here](https://m-zaremba.github.io/Zombie-Game/)
+
+##To do:
+* fix bug - brain and 'trap' showing on the same location
+* increase in zombie speed depending on the score
+* add zombie stamina bar
 
 ### Sound files source
 
