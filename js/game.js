@@ -5,12 +5,12 @@ var Trap = require('./trap.js');
 function Game() {
   this.board = document.querySelectorAll('#board div');
   this.zombie = new Zombie();
+  this.brain = new Brain();
   this.trap = new Trap();
   this.trap2 = new Trap();
   this.trap3 = new Trap();
   this.trap4 = new Trap();
   this.trap5 = new Trap();
-  this.brain = new Brain();
   this.score = 0;
   this.index = function(x, y) {
     return x + (y * 10);
@@ -25,21 +25,53 @@ function Game() {
   }
 
   this.showBrain = function() {
+    //this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
 
-    this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+    if(this.brain.x === this.trap.x && this.brain.y === this.trap.y) {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+    } else {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+      this.board[this.index(this.trap.x, this.trap.y)].classList.add('trap');
+    }
+
+    if(this.brain.x === this.trap2.x && this.brain.y === this.trap2.y) {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+    } else {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+      this.board[this.index(this.trap2.x, this.trap2.y)].classList.add('trap');
+    }
+
+    if(this.brain.x === this.trap3.x && this.brain.y === this.trap3.y) {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+    } else {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+      this.board[this.index(this.trap3.x, this.trap3.y)].classList.add('trap');
+    }
+
+    if(this.brain.x === this.trap4.x && this.brain.y === this.trap4.y) {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+    } else {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+      this.board[this.index(this.trap4.x, this.trap4.y)].classList.add('trap');
+    }
+
+    if(this.brain.x === this.trap5.x && this.brain.y === this.trap5.y) {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+    } else {
+      this.board[this.index(this.brain.x, this.brain.y)].classList.add('brain');
+      this.board[this.index(this.trap5.x, this.trap5.y)].classList.add('trap');
+    }
+
+
+    // this.board[this.index(this.trap2.x, this.trap2.y)].classList.add('trap');
+    // this.board[this.index(this.trap3.x, this.trap3.y)].classList.add('trap');
+    // this.board[this.index(this.trap4.x, this.trap4.y)].classList.add('trap');
+    // this.board[this.index(this.trap5.x, this.trap5.y)].classList.add('trap');
 
   }
-
-  this.showTrap = function() {
-    this.board[this.index(this.trap.x, this.trap.y)].classList.add('trap');
-    this.board[this.index(this.trap2.x, this.trap2.y)].classList.add('trap');
-    this.board[this.index(this.trap3.x, this.trap3.y)].classList.add('trap');
-    this.board[this.index(this.trap4.x, this.trap4.y)].classList.add('trap');
-    this.board[this.index(this.trap5.x, this.trap5.y)].classList.add('trap');
-  }
-
 
   this.moveZombie = function() {
+
     this.hideVisibleZombie();
     if (this.zombie.direction === "right") {
       this.zombie.x += 1;
@@ -77,8 +109,8 @@ function Game() {
     }
   }
 
-
   this.checkBrainCollision = function() {
+
     if (this.zombie.x === this.brain.x && this.zombie.y === this.brain.y) {
       document.querySelector('.brain').classList.remove('brain');
       document.querySelectorAll('.trap').forEach(e => e.classList.remove('trap'));
@@ -86,13 +118,12 @@ function Game() {
       this.score++
       document.querySelector('#score strong').innerText = this.score;
       this.brain = new Brain();
-      this.showBrain();
       this.trap = new Trap();
       this.trap2 = new Trap();
       this.trap3 = new Trap();
       this.trap4 = new Trap();
       this.trap5 = new Trap();
-      this.showTrap();
+      this.showBrain();
     }
   }
 
@@ -124,7 +155,7 @@ function Game() {
   this.startGame = function() {
     this.idSetInterval = setInterval(function() {
       self.moveZombie()
-    }, 200);
+    }, 500);
   }
 }
 

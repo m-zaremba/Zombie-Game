@@ -3,8 +3,8 @@
   document.querySelector('.start button').addEventListener('click', function() {
     var newGame = new Game();
     newGame.showZombie();
-    newGame.showTrap();
     newGame.showBrain();
+    //knewGame.showTrap();
     newGame.startGame();
     document.querySelector('.brains').play();
     document.querySelector('.start').classList.add('invisible');
@@ -14,8 +14,8 @@
     document.querySelector('#score strong').innerText = 0;
     var newGame = new Game();
     newGame.showZombie();
-    newGame.showTrap();
     newGame.showBrain();
+    //newGame.showTrap();
     newGame.startGame();
     document.querySelector('.brains').play();
     document.querySelector('#over').classList.add('invisible');

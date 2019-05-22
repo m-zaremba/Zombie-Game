@@ -1,6 +1,6 @@
 {
   "name": "furry_game",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple 2D game in JS",
   "main": "app.js",
   "scripts": {
@@ -19,5 +19,6 @@
   "devDependencies": {
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
-  }
+  },
+  "dependencies": {}
 }
