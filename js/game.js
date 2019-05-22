@@ -68,6 +68,14 @@ function Game() {
     // this.board[this.index(this.trap4.x, this.trap4.y)].classList.add('trap');
     // this.board[this.index(this.trap5.x, this.trap5.y)].classList.add('trap');
 
+    console.log(`Brain X: ${this.brain.x} Brain Y: ${this.brain.y}`);
+    console.log(`Trap X: ${this.trap.x} Trap Y: ${this.trap.y}`);
+    console.log(`Trap2 X: ${this.trap2.x} Trap Y: ${this.trap2.y}`);
+    console.log(`Trap3 X: ${this.trap3.x} Trap Y: ${this.trap3.y}`);
+    console.log(`Trap4 X: ${this.trap4.x} Trap Y: ${this.trap4.y}`);
+    console.log(`Trap5 X: ${this.trap5.x} Trap Y: ${this.trap5.y}`);
+    console.log('-----------------------------');
+
   }
 
   this.moveZombie = function() {
@@ -129,12 +137,21 @@ function Game() {
 
 
   this.gameOver = function() {
-    if ((this.zombie.x < 0 || this.zombie.x > 9 || this.zombie.y < 0 || this.zombie.y > 9) ||
-        (this.zombie.x === this.trap.x && this.zombie.y === this.trap.y) ||
-        (this.zombie.x === this.trap2.x && this.zombie.y === this.trap2.y) ||
-        (this.zombie.x === this.trap3.x && this.zombie.y === this.trap3.y) ||
-        (this.zombie.x === this.trap4.x && this.zombie.y === this.trap4.y) ||
-        (this.zombie.x === this.trap5.x && this.zombie.y === this.trap5.y)) {
+    if (this.zombie.x < 0 || this.zombie.x > 9 || this.zombie.y < 0 || this.zombie.y > 9) {
+      document.querySelector('.dead').play();
+      clearInterval(this.idSetInterval);
+      document.querySelector('.brain').classList.remove('brain');
+      document.querySelectorAll('.trap').forEach(e => e.classList.remove('trap'));
+      document.querySelector('#over').classList.remove('invisible');
+      document.querySelector('#over').classList.remove('none');
+      document.querySelector('p span').innerText = this.score;
+      return true;
+    } else if (
+    (this.zombie.x === this.trap.x && this.zombie.y === this.trap.y && this.brain.x !== this.trap.x && this.brain.y !== this.trap.y) ||
+    (this.zombie.x === this.trap2.x && this.zombie.y === this.trap2.y && this.brain.x !== this.trap2.x && this.brain.y !== this.trap2.y) ||
+    (this.zombie.x === this.trap3.x && this.zombie.y === this.trap3.y && this.brain.x !== this.trap3.x && this.brain.y !== this.trap3.y) ||
+    (this.zombie.x === this.trap4.x && this.zombie.y === this.trap4.y && this.brain.x !== this.trap4.x && this.brain.y !== this.trap4.y) ||
+    (this.zombie.x === this.trap5.x && this.zombie.y === this.trap5.y && this.brain.x !== this.trap5.x && this.brain.y !== this.trap5.y)) {
       document.querySelector('.dead').play();
       clearInterval(this.idSetInterval);
       document.querySelector('.brain').classList.remove('brain');
@@ -155,7 +172,7 @@ function Game() {
   this.startGame = function() {
     this.idSetInterval = setInterval(function() {
       self.moveZombie()
-    }, 500);
+    }, 350);
   }
 }
 
