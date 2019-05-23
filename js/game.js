@@ -12,6 +12,7 @@ function Game() {
   this.trap4 = new Trap();
   this.trap5 = new Trap();
   this.score = 0;
+  this.speed = 350;
   this.index = function(x, y) {
     return x + (y * 10);
   }
@@ -90,6 +91,7 @@ function Game() {
   }
 
   this.checkBrainCollision = function() {
+    console.log(this.speed);
 
     if (this.zombie.x === this.brain.x && this.zombie.y === this.brain.y) {
       document.querySelector('.brain').classList.remove('brain');
@@ -97,6 +99,7 @@ function Game() {
       document.querySelector('.eat').play();
       this.score++
       document.querySelector('#score strong').innerText = this.score;
+      this.increaseSpeed();
       this.brain = new Brain();
       this.trap = new Trap();
       this.trap2 = new Trap();
@@ -138,8 +141,18 @@ function Game() {
   this.startGame = function() {
     this.idSetInterval = setInterval(function() {
       self.moveZombie()
-    }, 350);
+    }, this.speed);
   }
+
+  this.increaseSpeed = function () {
+            this.speed -= 5;
+            clearInterval(this.idSetInterval);
+            this.idSetInterval = setInterval(function() {
+              self.moveZombie()
+            }, this.speed);
+    };
+
+
 }
 
 module.exports = Game;
