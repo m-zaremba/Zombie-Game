@@ -4,7 +4,6 @@
     var newGame = new Game();
     newGame.showZombie();
     newGame.showBrain();
-    //knewGame.showTrap();
     newGame.startGame();
     document.querySelector('.brains').play();
     document.querySelector('.start').classList.add('invisible');
@@ -15,7 +14,6 @@
     var newGame = new Game();
     newGame.showZombie();
     newGame.showBrain();
-    //newGame.showTrap();
     newGame.startGame();
     document.querySelector('.brains').play();
     document.querySelector('#over').classList.add('invisible');
