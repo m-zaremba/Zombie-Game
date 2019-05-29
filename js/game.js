@@ -12,7 +12,7 @@ function Game() {
   this.trap4 = new Trap();
   this.trap5 = new Trap();
   this.score = 0;
-  this.speed = 350;
+  this.speed = 320;
   this.index = function(x, y) {
     return x + (y * 10);
   }

@@ -15,7 +15,6 @@ body, html {
     margin: 0 auto;
     padding: 0;
     background-image: url(../images/board-bg.jpg);
-    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
