@@ -64,14 +64,11 @@ function Game() {
       this.zombie.y += 1;
     }
 
-    if (this.gameOver()) {
-      //this.checkBrainCollision();
-    } else {
+    if (!(this.gameOver())) {
       this.showZombie();
       this.checkBrainCollision();
     }
   }
-
 
   this.turnZombie = function(event) {
     switch (event.which) {
@@ -91,7 +88,6 @@ function Game() {
   }
 
   this.checkBrainCollision = function() {
-    console.log(this.speed);
 
     if (this.zombie.x === this.brain.x && this.zombie.y === this.brain.y) {
       document.querySelector('.brain').classList.remove('brain');
@@ -107,6 +103,8 @@ function Game() {
       this.trap4 = new Trap();
       this.trap5 = new Trap();
       this.showBrain();
+    } else {
+      return;
     }
   }
 
@@ -139,9 +137,9 @@ function Game() {
   });
 
   this.startGame = function() {
-    this.idSetInterval = setInterval(function() {
-      self.moveZombie()
-    }, this.speed);
+      this.idSetInterval = setInterval(function() {
+        self.moveZombie()
+      }, this.speed);
   }
 
   this.increaseSpeed = function () {
