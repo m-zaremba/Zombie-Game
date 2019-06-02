@@ -2,6 +2,8 @@
 
 Simple javascript browser game based on one of the homework assignments from my IT course. You can preview it [here](https://m-zaremba.github.io/Zombie-Game/)
 
+INFO: 'Controller' for mobile browsers is experimental and working with lag.
+
 ## To do:
 * ~~fix bug - brain and 'trap' showing on the same location~~ UPDATE: Fixed.
 * ~~increase in zombie speed depending on the score~~ UDATE: Done.
