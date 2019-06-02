@@ -18,5 +18,5 @@ INFO: 'Controller' for mobile browsers is experimental and working with lag.
 ### Graphic files source
 
 * [Brain](http://clipart-library.com/clipart/940259.htm)
-* [Zombie head](http://marcosparafotosgratis.blogspot.com/2016/08/wallpaper-plantas-contra-zombies-buena.html)
+* [Zombie head](https://opengameart.org/content/the-zombie-free-sprites)
 * Background - bootcamp materials

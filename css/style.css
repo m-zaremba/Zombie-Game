@@ -54,7 +54,7 @@ section#score div {
 }
 
 .zombie {
-  background: url('../images/zombie_head.png') no-repeat;
+  background: url('../images/zombiehead.png') no-repeat;
   background-size: cover;
 }
 
