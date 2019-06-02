@@ -1,5 +1,10 @@
   var Game = require('./game.js');
 
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    document.querySelector('.mobile-controller').classList.toggle('invisible');
+  }
+
   document.querySelector('.start button').addEventListener('click', function() {
     var newGame = new Game();
     newGame.showZombie();

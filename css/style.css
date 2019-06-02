@@ -11,13 +11,14 @@
     font-family: bloodynormal, serif;
 }
 
-body, html {
+body {
     margin: 0 auto;
     padding: 0;
     background-image: url(../images/board-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%;
+    background-size: cover;
+    height: 100vh;
 }
 
 section#score {
@@ -100,12 +101,13 @@ section#over pre {
 }
 
 .invisible {
-  opacity: 0;
+  /* opacity: 0;
   -webkit-transition: all 0.9s ease-in-out;
   -moz-transition: all 0.9s ease-in-out;
   -ms-transition: all 0.9s ease-in-out;
   -o-transition: all 0.9s ease-in-out;
-  transition: all 0.9s ease-in-out;
+  transition: all 0.9s ease-in-out; */
+  display: none;
 }
 
 .none {
@@ -165,4 +167,29 @@ section#over pre {
   0% { background-size: 95%; }
   50% { background-size: 85% }
   100% { background-size: 95% }
+}
+
+.mobile-controller {
+  height: 600px;
+  width: 600px;
+  margin: 3em auto;
+}
+
+.mobile-controller > div {
+  height: 180px;
+  width: 180px;
+  float: left;
+  font-size: 150px;
+  text-align: center;
+  line-height: 180px;
+  margin: 10px 10px;
+}
+
+.left,
+.right,
+.up,
+.down {
+  background-color: rgba(46, 10, 68, 0.9);
+  color: white;
+  border-radius: 10px;
 }

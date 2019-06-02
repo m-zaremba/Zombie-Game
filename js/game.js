@@ -2,6 +2,7 @@ var Zombie = require('./zombie.js');
 var Brain = require('./brain.js');
 var Trap = require('./trap.js');
 
+
 function Game() {
   this.board = document.querySelectorAll('#board div');
   this.zombie = new Zombie();
@@ -53,6 +54,7 @@ function Game() {
 
   this.moveZombie = function() {
 
+
     this.hideVisibleZombie();
     if (this.zombie.direction === "right") {
       this.zombie.x += 1;
@@ -86,6 +88,7 @@ function Game() {
         break;
     }
   }
+
 
   this.checkBrainCollision = function() {
 
@@ -134,6 +137,22 @@ function Game() {
 
   document.addEventListener('keydown', function(event) {
     self.turnZombie(event);
+  });
+
+  document.querySelector('.down').addEventListener('click', function(event) {
+    self.zombie.direction = 'down';
+  });
+
+  document.querySelector('.up').addEventListener('click', function(event) {
+    self.zombie.direction = 'up';
+  });
+
+  document.querySelector('.right').addEventListener('click', function(event) {
+    self.zombie.direction = 'right';
+  });
+
+  document.querySelector('.left').addEventListener('click', function(event) {
+    self.zombie.direction = 'left';
   });
 
   this.startGame = function() {
