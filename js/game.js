@@ -84,10 +84,27 @@ function Game() {
         this.zombie.direction = 'right';
         break;
       case 40:
-        this.zombie.direction = 'down'
+        this.zombie.direction = 'down';
         break;
     }
-  }
+   }
+
+   this.turnMobileZombie = function(event) {
+     switch (true) {
+       case event.currentTarget.classList.contains('up'):
+         this.zombie.direction = 'up';
+         break;
+       case event.currentTarget.classList.contains('down'):
+         this.zombie.direction = 'down';
+         break;
+       case event.currentTarget.classList.contains('left'):
+         this.zombie.direction = 'left';
+         break;
+       case event.currentTarget.classList.contains('right'):
+         this.zombie.direction = 'right';
+         break;
+     }
+    }
 
 
   this.checkBrainCollision = function() {
@@ -139,21 +156,13 @@ function Game() {
     self.turnZombie(event);
   });
 
-  document.querySelector('.down').addEventListener('click', function(event) {
-    self.zombie.direction = 'down';
-  });
-
-  document.querySelector('.up').addEventListener('click', function(event) {
-    self.zombie.direction = 'up';
-  });
-
-  document.querySelector('.right').addEventListener('click', function(event) {
-    self.zombie.direction = 'right';
-  });
-
-  document.querySelector('.left').addEventListener('click', function(event) {
-    self.zombie.direction = 'left';
-  });
+  document.querySelectorAll('.mobile-controller div').forEach((e,i) => {
+    if(e.classList.contains('up') || e.classList.contains('down') || e.classList.contains('left') || e.classList.contains('right')) {
+      e.addEventListener('click', function(event) {
+        self.turnMobileZombie(event);
+      })
+    };
+  })
 
   this.startGame = function() {
       this.idSetInterval = setInterval(function() {
