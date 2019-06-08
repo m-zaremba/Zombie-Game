@@ -54,7 +54,6 @@ function Game() {
 
   this.moveZombie = function() {
 
-
     this.hideVisibleZombie();
     if (this.zombie.direction === "right") {
       this.zombie.x += 1;
@@ -73,6 +72,8 @@ function Game() {
   }
 
   this.turnZombie = function(event) {
+
+
     switch (event.which) {
       case 37:
         this.zombie.direction = 'left';
@@ -158,7 +159,7 @@ function Game() {
 
   document.querySelectorAll('.mobile-controller div').forEach((e,i) => {
     if(e.classList.contains('up') || e.classList.contains('down') || e.classList.contains('left') || e.classList.contains('right')) {
-      e.addEventListener('click', function(event) {
+      e.addEventListener('touchstart', function(event) {
         self.turnMobileZombie(event);
       })
     };
