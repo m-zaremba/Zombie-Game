@@ -55,7 +55,7 @@ section#score div {
 }
 
 .zombie {
-  background: url('../images/zombiehead.png') no-repeat;
+  background: url('../images/zombie_head3.png') no-repeat;
   background-size: cover;
 }
 
@@ -88,6 +88,10 @@ section#over {
   z-index: 1;
   padding: 10px;
   background-color: rgba(46, 10, 68, 0.9);
+  background-image: url('../images/zombie-clipart-finger-4.png');
+  background-size: 40% auto;
+  background-repeat: no-repeat;
+  background-position: bottom right;
   font-size: 4em;
   color: rgb(0, 189, 0);
 }
@@ -171,18 +175,18 @@ section#over pre {
 }
 
 .mobile-controller {
-  height: 600px;
-  width: 600px;
+  height: 680px;
+  width: 680px;
   margin: 3em auto;
 }
 
 .mobile-controller > div {
-  height: 180px;
-  width: 180px;
+  height: 200px;
+  width: 200px;
   float: left;
   font-size: 150px;
   text-align: center;
-  line-height: 180px;
+  line-height: 200px;
   margin: 10px 10px;
 }
 

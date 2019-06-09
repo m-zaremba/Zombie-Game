@@ -18,5 +18,6 @@ Simple javascript browser game based on one of the homework assignments from my 
 ### Graphic files source
 
 * [Brain](http://clipart-library.com/clipart/940259.htm)
-* [Zombie head](https://opengameart.org/content/the-zombie-free-sprites)
+* [Zombie head](https://clipartix.com/zombie-clip-art-image-33952/)
+* [Zombie hand](https://unixtitan.net/images/zombie-clipart-finger-4.png)
 * Background - bootcamp materials
