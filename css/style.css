@@ -5,7 +5,6 @@
     font-style: normal;
 }
 
-
 * {
     box-sizing: border-box;
     font-family: bloodynormal, serif;
@@ -27,8 +26,6 @@ section#score {
 }
 
 #board {
-  /* width: 50%; */
-  /* height: 640px; */
   width: 90%;
   margin: 0 auto;
   position: relative;
@@ -40,7 +37,7 @@ section#score {
   padding-top: 100%;
 }
 
-.wrapper {
+.board-wrapper {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -50,7 +47,7 @@ section#score {
   height: 100%;
 }
 
-.wrapper  > div {
+.board-wrapper  > div {
   border: 1px solid black;
   border-radius: 5px;
   background-color: rgba(211,211,211, 0.55);
@@ -124,12 +121,6 @@ section#over pre {
 }
 
 .invisible {
-  /* opacity: 0;
-  -webkit-transition: all 0.9s ease-in-out;
-  -moz-transition: all 0.9s ease-in-out;
-  -ms-transition: all 0.9s ease-in-out;
-  -o-transition: all 0.9s ease-in-out;
-  transition: all 0.9s ease-in-out; */
   display: none;
 }
 
@@ -193,7 +184,6 @@ section#over pre {
 }
 
 .mobile-controller {
-  /* height: 680px; */
   width: 70%;
   margin: 0 auto;
   position: relative;
