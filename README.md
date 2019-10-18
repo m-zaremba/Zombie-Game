@@ -1,13 +1,12 @@
 # Zombie-Game
 
-Simple javascript browser game based on one of the homework assignments from my IT course. You can preview it [here](https://m-zaremba.github.io/Zombie-Game/)
+Simple javascript browser game based on one of the homework assignments from my IT course. Extra features that I added: stylish graphics, scary sounds, deadly traps, acceleration of the the game dependant on the number of brains eaten, the ability to play the game on smartphones.
 
-~~INFO: 'Controller' for mobile browsers is experimental and working with lag.~~ UPDATE: Fixed.
+You can play the game [here](https://m-zaremba.github.io/Zombie-Game/)
+
 
 ## To do:
-* ~~fix bug - brain and 'trap' showing on the same location~~ UPDATE: Fixed.
-* ~~increase in zombie speed depending on the score~~ UPDATE: Done.
-* add zombie stamina bar
+* add zombie stamina bar (?)
 
 ### Sound files source
 
