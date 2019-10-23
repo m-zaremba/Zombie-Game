@@ -4,7 +4,7 @@ var Trap = require('./trap.js');
 
 
 function Game() {
-  this.board = document.querySelectorAll('.wrapper div');
+  this.board = document.querySelectorAll('.board-wrapper div');
   this.zombie = new Zombie();
   this.brain = new Brain();
   this.trap = new Trap();
